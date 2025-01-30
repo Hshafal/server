@@ -16,11 +16,10 @@ router.post("/login", async (req: Request, res: Response) => {
 	}
 
 	// Generate a JWT
-	const token = jwt.sign({ role: "admin" }, process.env.JWT_SECRET!, {
-		expiresIn: "1h",
-	});
+	const token = jwt.sign({ role: "admin" }, process.env.JWT_SECRET!);
 
 	res.send({ token });
 });
 
 export { router as adminRouter };
+	
